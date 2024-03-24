@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:trip_planner/login.dart';
@@ -6,13 +5,15 @@ import 'package:trip_planner/signup.dart';
 
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: HomePage(),
   ));
 }
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                       fontSize: 38,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 // Arka plan resmi için DecorationImage kullanılıyor
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     // AssetImage ile resmin yolunu belirtildi
                     image: AssetImage('assets\background.png'),
@@ -67,32 +68,32 @@ class HomePage extends StatelessWidget {
                     height: 60,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                          MaterialPageRoute(builder: (context) => const LoginPage()));
                     },
-                    color: Color.fromARGB(255, 228, 224, 224),
+                    color: const Color.fromARGB(255, 228, 224, 224),
                     // Butonun şekli
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Color.fromARGB(255, 228, 224, 224)),
+                        side: const BorderSide(color: Color.fromARGB(255, 228, 224, 224)),
                         borderRadius: BorderRadius.circular(50)),
-                    child: Text(
+                    child: const Text(
                       "Giriş Yap",
                       style:
                           TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
                     ),
                   ),
                   // Kayıt Ol butonu
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   MaterialButton(
                     minWidth: double.infinity,
                     height: 60,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignupPage()));
+                          MaterialPageRoute(builder: (context) => const SignupPage()));
                     },
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    color: const Color.fromARGB(255, 0, 0, 0),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
-                    child: Text(
+                    child: const Text(
                       "Kayıt Ol",
                       style: TextStyle(
                           color: Colors.white,
