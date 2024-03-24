@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,7 @@ class SignupPage extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back_ios,
+          icon: const Icon(Icons.arrow_back_ios,
             size: 20,
             color: Colors.black,),
 
@@ -23,7 +25,7 @@ class SignupPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 40),
           height: MediaQuery.of(context).size.height - 50,
           width: double.infinity,
           child: Column(
@@ -31,14 +33,14 @@ class SignupPage extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  Text("Sign up",
+                  const Text("Kayıt Ol",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
 
                   ),),
-                  SizedBox(height: 20,),
-                  Text("Create an account, It's free ",
+                  const SizedBox(height: 20,),
+                  Text("",
                     style: TextStyle(
                         fontSize: 15,
                         color:Colors.grey[700]),)
@@ -48,18 +50,18 @@ class SignupPage extends StatelessWidget {
               ),
               Column(
                 children: <Widget>[
-                  inputFile(label: "Username"),
+                  inputFile(label: "Kullanıcı Adı"),
                   inputFile(label: "Email"),
-                  inputFile(label: "Password", obscureText: true),
-                  inputFile(label: "Confirm Password ", obscureText: true),
+                  inputFile(label: "Şifre", obscureText: true),
+                  inputFile(label: "Şifre Tekrar ", obscureText: true),
                 ],
               ),
               Container(
-                padding: EdgeInsets.only(top: 3, left: 3),
+                padding: const EdgeInsets.only(top: 3, left: 3),
                 decoration:
                 BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    border: Border(
+                    border: const Border(
                       bottom: BorderSide(color: Colors.black),
                       top: BorderSide(color: Colors.black),
                       left: BorderSide(color: Colors.black),
@@ -74,14 +76,14 @@ class SignupPage extends StatelessWidget {
                   minWidth: double.infinity,
                   height: 60,
                   onPressed: () {},
-                  color: Color(0xff0095FF),
+                  color: const Color.fromARGB(255, 0, 0, 0),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
 
                   ),
-                  child: Text(
-                    "Sign up", style: TextStyle(
+                  child: const Text(
+                    "Kayıt Ol", style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 18,
                     color: Colors.white,
@@ -94,11 +96,11 @@ class SignupPage extends StatelessWidget {
 
 
               ),
-              Row(
+             const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Already have an account?"),
-                  Text(" Login", style:TextStyle(
+                  Text("Hesabın var mı?"),
+                  Text(" Giriş Yap", style:TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18
                   ),
@@ -131,19 +133,19 @@ Widget inputFile({label, obscureText = false})
     children: <Widget>[
       Text(
         label,
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
             color:Colors.black87
         ),
 
       ),
-      SizedBox(
+      const SizedBox(
         height: 5,
       ),
       TextField(
         obscureText: obscureText,
-        decoration: InputDecoration(
+        decoration:const InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 0,
                 horizontal: 10),
             enabledBorder: OutlineInputBorder(
@@ -157,7 +159,7 @@ Widget inputFile({label, obscureText = false})
             )
         ),
       ),
-      SizedBox(height: 10,)
+      const SizedBox(height: 10,)
     ],
   );
 }
